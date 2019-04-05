@@ -1,0 +1,45 @@
+.Smurf {
+  max-width: 600px;
+  background: #fafafa;
+  box-shadow: 0 0 5px lightgrey;
+  border: 1px solid lightgrey;
+  box-sizing: border-box;
+  padding: 20px;
+  position: relative;
+  margin: 20px auto;
+  border-radius: 10px;
+  .delete, .edit {
+    position: absolute;
+    top: 0;
+    transition: color 0.3s, opacity 0.3s;
+    cursor: pointer;
+    opacity: 0;
+  }
+  &:hover > .delete, &:hover > .edit {
+    opacity: 1;
+  }
+  .delete {
+    right: 0;
+    font-size: 1.8rem;
+    color: red;
+    border: none;
+    background: transparent;
+    &:hover {
+      color: darken(red, 10);
+    }
+  }
+  .edit {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    svg path {
+      fill: green;
+    }
+    &:hover {
+      svg path {
+        color: darken(green, 10);
+      }
+    }
+  }
+
+}

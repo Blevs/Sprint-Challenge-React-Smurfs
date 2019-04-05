@@ -1,6 +1,7 @@
 import React from 'react';
+import './SmurfForm.scss';
 
-const SmurfForm = ({values, onSubmit, onChange}) => {
+const SmurfForm = ({values, onSubmit, onChange, buttonText}) => {
   return (
       <div className="SmurfForm">
         <form onSubmit={onSubmit}>
@@ -23,7 +24,7 @@ const SmurfForm = ({values, onSubmit, onChange}) => {
             value={values.height || ""}
             name="height"
           />
-          <button type="submit">Add to the village</button>
+          <button type="submit">{buttonText}</button>
         </form>
       </div>
   );

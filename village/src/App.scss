@@ -1,0 +1,27 @@
+.App {
+  text-align: center;
+  overflow: hidden;
+}
+
+header {
+  width: 100%;
+  background: lightskyblue;
+  border-bottom: 1px solid #fafafa;
+  padding: 20px 5px;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px lightgrey;
+  display: flex;
+  justify-content: space-around;
+  a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: text-shadow 0.3s, color 0.3s;
+    &:hover {
+      text-shadow: 0 0 5px lightgrey;
+    }
+    &.active {
+      color: #dadada;
+    }
+  }
+}

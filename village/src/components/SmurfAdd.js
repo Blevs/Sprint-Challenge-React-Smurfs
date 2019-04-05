@@ -37,11 +37,15 @@ class SmurfAdd extends Component {
 
   render() {
     return (
-      <SmurfForm
-        onSubmit={this.addSmurf}
-        values={this.state}
-        onChange={this.handleInputChange}
-      />);
+      <div>
+        <h1>Add Smurf</h1>
+        <SmurfForm
+          onSubmit={this.addSmurf}
+          values={this.state}
+          onChange={this.handleInputChange}
+          buttonText="Add to village" />
+      </div>
+    );
   }
 }
 

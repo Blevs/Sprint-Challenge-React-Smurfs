@@ -16,9 +16,15 @@ const SmurfEdit = ({initialSmurf, setSmurfs, history}) => {
     setSmurf({...smurf, [event.target.name]: event.target.value});
   };
   return (
-    smurf
-      ? <SmurfForm values={smurf} onSubmit={editSmurf} onChange={handleInputChange}/>
-    : <div>Loading...</div>
+    <div>
+      <h1>Edit Smurf</h1>
+      {smurf
+          ? <SmurfForm values={smurf}
+            onSubmit={editSmurf}
+            onChange={handleInputChange}
+            buttonText="Edit smurf" />
+        : <div>Loading...</div>}
+    </div>
   );
 };
 
