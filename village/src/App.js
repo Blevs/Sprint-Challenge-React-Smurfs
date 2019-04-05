@@ -4,6 +4,7 @@ import './App.css';
 import SmurfAdd from './components/SmurfAdd';
 import SmurfEdit from './components/SmurfEdit';
 import Smurfs from './components/Smurfs';
+import Smurf from './components/Smurf';
 import axios from 'axios';
 import { Route, NavLink } from 'react-router-dom';
 
@@ -50,6 +51,12 @@ class App extends Component {
                                              ({id}) => id === parseInt(props.match.params.id, 10)
                                            )}
                                            setSmurfs={this.setSmurfs} />}/>
+        <Route path="/smurf/:id"
+               render={props => <Smurf {...props}
+                                           {...this.state.smurfs.find(
+                                             ({id}) => id === parseInt(props.match.params.id, 10)
+                                           )}
+                                           deleteSmurf={this.deleteSmurf} />}/>
       </div>
     );
   }

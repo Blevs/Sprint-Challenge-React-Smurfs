@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Smurf = ({name, height, age, id, deleteSmurf}) => {
   return (
     <div className="Smurf">
-      <h3>{name}</h3>
+      <Link to={`/smurf/${id}`}><h3>{name}</h3></Link>
       <strong>{height} tall</strong>
       <p>{age} smurf years old</p>
       <button onClick={() => deleteSmurf(id)}>&times;</button>
