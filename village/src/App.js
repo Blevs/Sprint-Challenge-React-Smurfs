@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import './App.css';
 import SmurfAdd from './components/SmurfAdd';
+import SmurfEdit from './components/SmurfEdit';
 import Smurfs from './components/Smurfs';
 import axios from 'axios';
 import { Route, NavLink } from 'react-router-dom';
@@ -42,6 +43,12 @@ class App extends Component {
                                         smurfs={this.state.smurfs} />}/>
         <Route path="/smurf-form"
                render={props => <SmurfAdd {...props}
+                                           setSmurfs={this.setSmurfs} />}/>
+        <Route path="/smurf-edit/:id"
+               render={props => <SmurfEdit {...props}
+                                           initialSmurf={this.state.smurfs.find(
+                                             ({id}) => id === parseInt(props.match.params.id, 10)
+                                           )}
                                            setSmurfs={this.setSmurfs} />}/>
       </div>
     );
