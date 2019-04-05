@@ -1,11 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import './Smurf.scss';
+import { ReactComponent as Pencil } from './pencil.svg';
 
-const Smurf = props => {
+const Smurf = ({name, height, age, id, deleteSmurf}) => {
   return (
     <div className="Smurf">
-      <h3>{props.name}</h3>
-      <strong>{props.height} tall</strong>
-      <p>{props.age} smurf years old</p>
+      <Link to={`/smurf/${id}`}><h3>{name}</h3></Link>
+      <strong>{height} tall</strong>
+      <p>{age} smurf years old</p>
+      <button className="delete" onClick={() => deleteSmurf(id)}>&times;</button>
+      <Link className="edit" to={`/smurf-edit/${id}`}><Pencil/></Link>
     </div>
   );
 };
